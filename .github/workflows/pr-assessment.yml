@@ -1,0 +1,16 @@
+name: GitHub PR Size Assessment Trigger
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  assess-pr-size-on-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: rainlanguage/github-chore/.github/workflows/chore.yml@2025-06-30-update-readme
+        with:
+          pr_number: ${{ github.event.pull_request.number }}
+          repo: ${{ github.event.repository.name }}
+          owner: ${{ github.repository_owner }}
+          merged: ${{ github.event.pull_request.merged }}
