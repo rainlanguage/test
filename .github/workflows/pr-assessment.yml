@@ -6,7 +6,7 @@ on:
 
 jobs:
   assess-pr-size-on-merge:
-      uses: rainlanguage/github-chore/.github/workflows/pr-assessment.yml@2025-06-30-update-readme
+      uses: rainlanguage/github-chore/.github/workflows/pr-assessment.yml@main
       with:
         pr_number: ${{ github.event.pull_request.number }}
         repo: ${{ github.event.repository.name }}
